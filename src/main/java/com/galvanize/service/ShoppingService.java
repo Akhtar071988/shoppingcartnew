@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,9 +30,13 @@ public class ShoppingService {
         return mapper.map(shoppingRepo.findById(id).orElse(null), ShoppingDTO.class);
     }
 
-    public Shopping getAllShops(Long id) {
-        Optional<Shopping> shopping = shoppingRepo.findById(id);
-        return shopping.orElse(null);
+    // AML
+    // this method doesn't need an argument
+    public List<Shopping> getAllShops() {
+        //this should call the find all method, not findById
+        List<Shopping> shoppingList = shoppingRepo.findAll();
+        // method should return a list, not an object
+        return shoppingList;
     }
 }
 
