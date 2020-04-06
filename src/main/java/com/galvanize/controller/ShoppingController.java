@@ -4,8 +4,8 @@ import com.galvanize.dto.ShoppingDTO;
 import com.galvanize.entity.Shopping;
 import com.galvanize.service.ShoppingService;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import java.util.function.BooleanSupplier;
 
 @RestController()
 @RequestMapping("/api/shop")
@@ -38,7 +38,7 @@ public class ShoppingController {
     }
 
     @DeleteMapping("/{id}")
-    public BooleanSupplier deleteById(@PathVariable long id){
+    public boolean updateShopping(@PathVariable long id){
         return shoppingService.deleteByShopperId(id);
     }
 }

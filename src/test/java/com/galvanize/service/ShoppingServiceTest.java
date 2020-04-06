@@ -80,6 +80,6 @@ public class ShoppingServiceTest {
     public void deleteByShopperId(){
         ShoppingService shoppingService = new ShoppingService(shoppingRepository);
         when(shoppingRepository.deleteByShopperId(anyLong())).thenReturn(1);
-        assertNull(shoppingService.deleteByShopperId(1L));
+        assertTrue(shoppingService.deleteByShopperId(1L));
     }
 }
