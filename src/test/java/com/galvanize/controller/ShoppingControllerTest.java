@@ -80,9 +80,12 @@ public class ShoppingControllerTest {
 
 //    @Test
 //    public void deleteShoppingById() throws Exception {
-//        when(shoppingService.deleteByShopperId(anyLong())).thenReturn(true);
-//        mvc.perform(delete("/api/shops/1"))
+//        Shopping expected = new Shopping();
+//        expected.setShopperId(1L);
+//        String json = objectMapper.writeValueAsString(expected);
+//        when(shoppingService.deleteByShopperId(anyLong())).thenReturn(1);
+//        mvc.perform(delete("/api/shop/1"))
 //                .andExpect(status().isOk())
-//                .andExpect(MockMvcResultMatchers.jsonPath("$").value(true));
+//                .andExpect(jsonPath("$.shopperId").value(expected.getShopperId()));
 //    }
 }
